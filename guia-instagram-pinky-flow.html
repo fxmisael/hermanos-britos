@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Guía de Instagram — Pinky Flow Barbershop</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm 14mm 14mm; }
+
+  :root{
+    --tinta:#14110f;
+    --suave:#5d554f;
+    --linea:#ddd6cf;
+    --fondo:#f7f4f0;
+    --acento:#b4292f;
+    --verde:#1f6b4a;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    font-family:"Liberation Sans","DejaVu Sans",Arial,sans-serif;
+    color:var(--tinta);
+    font-size:10.4pt;
+    line-height:1.5;
+    margin:0;
+  }
+
+  h1,h2,h3{ line-height:1.2; margin:0; }
+
+  /* ---------- Portada ---------- */
+  .portada{
+    page-break-after:always;
+    padding-top:22mm;
+  }
+  .kicker{
+    font-size:9pt; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--acento); font-weight:700; margin-bottom:8mm;
+  }
+  .portada h1{
+    font-size:30pt; font-weight:800; letter-spacing:-.02em; margin-bottom:5mm;
+  }
+  .portada .sub{
+    font-size:12.5pt; color:var(--suave); max-width:135mm; margin-bottom:12mm;
+  }
+  .para-quien{
+    border-top:2px solid var(--tinta);
+    border-bottom:1px solid var(--linea);
+    padding:5mm 0; margin-bottom:10mm;
+    display:flex; gap:12mm;
+  }
+  .para-quien div{ flex:1; }
+  .para-quien dt{
+    font-size:8.5pt; text-transform:uppercase; letter-spacing:.1em;
+    color:var(--suave); font-weight:700; margin-bottom:1.5mm;
+  }
+  .para-quien dd{ margin:0; font-size:10.5pt; font-weight:600; }
+
+  .hoy{
+    background:var(--fondo);
+    border-left:4px solid var(--acento);
+    padding:7mm 8mm;
+  }
+  .hoy h2{ font-size:14pt; margin-bottom:4mm; }
+  .hoy p{ margin:0 0 4mm; color:var(--suave); }
+  .hoy ol{ margin:0; padding-left:5mm; }
+  .hoy li{ margin-bottom:3.5mm; font-size:11pt; }
+  .hoy li > b:first-child{ display:block; }
+  .hoy .mini{ color:var(--suave); font-size:9.5pt; }
+
+  /* ---------- Secciones ---------- */
+  .seccion{ page-break-before:always; }
+  .seccion-cabeza{
+    display:flex; align-items:baseline; gap:4mm;
+    border-bottom:2px solid var(--tinta);
+    padding-bottom:3mm; margin-bottom:6mm;
+  }
+  .num{
+    font-size:22pt; font-weight:800; color:var(--acento); line-height:1;
+  }
+  .seccion-cabeza h2{ font-size:17pt; font-weight:800; letter-spacing:-.01em; }
+  .seccion-cabeza .tiempo{
+    margin-left:auto; font-size:9pt; color:var(--suave);
+    border:1px solid var(--linea); border-radius:20px; padding:1mm 3.5mm;
+    white-space:nowrap;
+  }
+
+  h3{
+    font-size:11.5pt; font-weight:700; margin:6mm 0 2.5mm;
+    padding-bottom:1.5mm; border-bottom:1px solid var(--linea);
+  }
+  p{ margin:0 0 3mm; }
+  .nota{ color:var(--suave); font-size:9.6pt; }
+
+  /* ---------- Antes / Después ---------- */
+  .cambio{ margin-bottom:5mm; break-inside:avoid; }
+  .fila{ display:flex; gap:4mm; }
+  .caja{ flex:1; border:1px solid var(--linea); padding:3.5mm 4mm; }
+  .caja.mal{ background:#fdf5f4; border-color:#e8c9c7; }
+  .caja.bien{ background:#f2f8f4; border-color:#c3dece; }
+  .etiqueta{
+    font-size:8pt; text-transform:uppercase; letter-spacing:.1em;
+    font-weight:700; margin-bottom:2mm;
+  }
+  .caja.mal .etiqueta{ color:var(--acento); }
+  .caja.bien .etiqueta{ color:var(--verde); }
+  .valor{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:10pt; white-space:pre-line; }
+  .porque{ font-size:9.6pt; color:var(--suave); margin-top:2.5mm; }
+
+  /* ---------- Bloques para copiar ---------- */
+  .copiar{
+    break-inside:avoid;
+    border:1px dashed #b9b0a7; background:#fffdfa;
+    padding:4mm 4.5mm; margin:2.5mm 0 3mm;
+    font-family:"DejaVu Sans Mono","Liberation Mono",monospace;
+    font-size:9.6pt; line-height:1.55; white-space:pre-wrap;
+  }
+  .copiar-tit{
+    font-size:8.5pt; text-transform:uppercase; letter-spacing:.09em;
+    color:var(--suave); font-weight:700; margin-top:4mm;
+  }
+
+  /* ---------- Tablas ---------- */
+  table{ break-inside:avoid; width:100%; border-collapse:collapse; margin:2mm 0 4mm; font-size:9.6pt; }
+  th{
+    text-align:left; background:var(--tinta); color:#fff;
+    padding:2.2mm 3mm; font-size:8.6pt; text-transform:uppercase; letter-spacing:.06em;
+  }
+  td{ padding:2.2mm 3mm; border-bottom:1px solid var(--linea); vertical-align:top; }
+  tr:nth-child(even) td{ background:#faf8f6; }
+  .dia{ font-weight:700; white-space:nowrap; }
+
+  /* ---------- Checklist ---------- */
+  ul.check{ list-style:none; padding:0; margin:2mm 0 4mm; }
+  ul.check li{
+    padding-left:8mm; margin-bottom:2.8mm; position:relative; break-inside:avoid;
+  }
+  ul.check li::before{
+    content:""; position:absolute; left:0; top:.7mm;
+    width:4.2mm; height:4.2mm; border:1.6px solid var(--tinta); border-radius:1px;
+  }
+
+  ol.pasos{ padding-left:5mm; margin:2mm 0 4mm; }
+  ol.pasos li{ margin-bottom:2.5mm; break-inside:avoid; }
+
+  .aviso{
+    background:var(--fondo); border-left:3px solid var(--tinta);
+    padding:3.5mm 4.5mm; margin:4mm 0; font-size:9.8pt;
+  }
+  .aviso b{ display:block; margin-bottom:1mm; }
+
+  .slide-num{
+    display:inline-block; width:7mm; height:7mm; line-height:7mm; text-align:center;
+    background:var(--tinta); color:#fff; font-weight:700; font-size:9pt; border-radius:50%;
+  }
+
+  footer{
+    margin-top:8mm; padding-top:3mm; border-top:1px solid var(--linea);
+    font-size:8.6pt; color:var(--suave);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA ============ -->
+<section class="portada">
+  <div class="kicker">Guía de Instagram</div>
+  <h1>Pinky Flow<br>Barbershop</h1>
+  <p class="sub">Qué cambiar en tu perfil, qué publicar cada semana y qué mirar para saber si está funcionando. Todo explicado paso a paso, sin palabras raras.</p>
+
+  <div class="para-quien">
+    <div><dt>Para</dt><dd>Yoldy Álvarez</dd></div>
+    <div><dt>Cuenta</dt><dd>@pinckyflowbarbershop</dd></div>
+    <div><dt>Hoy tienes</dt><dd>1.657 seguidores · 217 publicaciones</dd></div>
+  </div>
+
+  <div class="hoy">
+    <h2>Si solo haces tres cosas, que sean estas</h2>
+    <p>Las tres juntas toman menos de 10 minutos y son las que más mueven la aguja.</p>
+    <ol>
+      <li><b>Cambia el nombre que aparece debajo de tu @.</b>
+        <span class="mini">Ahora dice "yoldy Alvarez". Ponle <b>Pinky Flow | Barbería SD</b>. Ese es el campo con el que la gente te encuentra cuando busca "barbería" en Instagram.</span></li>
+      <li><b>Cambia los dos posts que tienes fijados arriba.</b>
+        <span class="mini">Hoy son dos gráficas de publicidad. Pon tu mejor antes y después, y el de precios.</span></li>
+      <li><b>Cambia tu descripción (la bio).</b>
+        <span class="mini">Está en la página 2, lista para copiar y pegar.</span></li>
+    </ol>
+  </div>
+
+  <footer>Preparado el 1 de octubre de 2026 para Pinky Flow Barbershop</footer>
+</section>
+
+<!-- ============ 1. PERFIL ============ -->
+<section class="seccion">
+  <div class="seccion-cabeza">
+    <span class="num">1</span>
+    <h2>Arregla tu perfil</h2>
+    <span class="tiempo">15 minutos</span>
+  </div>
+
+  <p>Tu perfil es tu vitrina. Cuando alguien llega, decide en dos segundos si te sigue o se va, y lo decide mirando solo cinco cosas: tu foto, tu nombre, tu descripción, tu link y la primera fila de fotos. Esto arregla esas cinco.</p>
+
+  <h3>1. El nombre debajo de tu @</h3>
+  <div class="cambio">
+    <div class="fila">
+      <div class="caja mal">
+        <div class="etiqueta">Como está hoy</div>
+        <div class="valor">yoldy Alvarez</div>
+      </div>
+      <div class="caja bien">
+        <div class="etiqueta">Como debe quedar</div>
+        <div class="valor">Pinky Flow | Barbería SD</div>
+      </div>
+    </div>
+    <p class="porque">Este es el campo que Instagram usa para buscarte. Si alguien escribe "barbería Santo Domingo" y tu nombre no dice "barbería", no sales. Ahora mismo estás usando 13 de los 30 caracteres que te dan, y ninguno sirve para que te encuentren. Si prefieres que tu nombre vaya al frente, usa <b>Yoldy Álvarez | Barbería SD</b>, que también cabe.</p>
+  </div>
+
+  <h3>2. Tu descripción (la bio)</h3>
+  <div class="cambio">
+    <div class="fila">
+      <div class="caja mal">
+        <div class="etiqueta">Como está hoy</div>
+        <div class="valor">santo Domingo #DISCIPLINA
+fade,taper,diseños y cortes modernos
+reservar por WhatsApp
+reserva aquí</div>
+      </div>
+      <div class="caja bien">
+        <div class="etiqueta">Como debe quedar</div>
+        <div class="valor">Tu fade listo sin esperar turno.
+Taper, diseños y cortes modernos
+en Santo Domingo.
+Agenda por WhatsApp</div>
+      </div>
+    </div>
+    <p class="porque">Tres cosas cambian. Primero va lo que el cliente gana (no esperar), no dónde estás. Dices "reserva" una sola vez, no dos. Y bajas de 8 emojis a uno. Los emojis de más no ayudan, ensucian. Ojo: Santo Domingo va con mayúscula, y si usas tu nombre, Yoldy también.</p>
+  </div>
+
+  <h3>3. Los dos posts fijados</h3>
+  <p>Los que tienes arriba son gráficas de publicidad, y una dice "Síguenos en redes sociales" a gente que <b>ya está parada en tu perfil</b>. Ese es el espacio más valioso de tu cuenta. Pon estos tres:</p>
+  <ol class="pasos">
+    <li><b>Tu mejor antes y después.</b> Las dos fotos en un mismo post (deslizando), no en dos posts separados. Esto prueba que sabes cortar.</li>
+    <li><b>Precios y cómo reservar.</b> Que no tengan que escribirte para preguntar cuánto cuesta.</li>
+    <li><b>Qué esperar en tu primera visita.</b> Dónde queda, dónde parquear, cuánto dura.</li>
+  </ol>
+
+  <h3>4. Deja de seguir gente</h3>
+  <p>Sigues a <b>2.481 cuentas</b> y te siguen <b>1.657</b>. Eso se lee mal: parece una cuenta buscando seguidores, no la barbería buena del sector. Baja a menos de 1.000 quitando cuentas que no sean clientes, suplidores o barberos de referencia. <b>Hazlo de 50 en 50 por día</b>, si quitas muchas de golpe Instagram te bloquea el botón.</p>
+
+  <h3>5. Tu foto de perfil</h3>
+  <p>La de ahora tiene el fondo de GTA compitiendo con tu cara. En el teléfono esa foto se ve del tamaño de una moneda, y ahí todo ese fondo es ruido. Dos opciones que sí funcionan: tu cara llenando el círculo contra una pared lisa del local, o el logo de Pinky Flow sobre un color plano.</p>
+
+  <div class="aviso">
+    <b>Un detalle que nadie te ha dicho</b>
+    Tu @ dice <b>pincky</b> con C, pero tus gráficas dicen <b>Pinky</b> sin C. Quien te busque como lo vio en una gráfica, no te encuentra. Elige una sola forma de escribirlo y úsala en todo: gráficas, tarjetas, el rótulo y el nombre de Instagram.
+  </div>
+
+  <p class="nota">Lo que <b>no</b> hay que tocar: el link de WhatsApp arriba está perfecto, es el camino más corto a una reserva. Y la categoría "Barbería" también está bien puesta.</p>
+
+  <footer>Guía de Instagram · Pinky Flow Barbershop</footer>
+</section>
+
+<!-- ============ 2. DESTACADAS Y FOTOS ============ -->
+<section class="seccion">
+  <div class="seccion-cabeza">
+    <span class="num">2</span>
+    <h2>Tus destacadas y tus fotos</h2>
+    <span class="tiempo">30 minutos</span>
+  </div>
+
+  <h3>Las bolitas de historias destacadas</h3>
+  <p>Tienes cuatro: Diseños, Taper, Publicidad y Fade. Tres son tipos de corte y "Publicidad" no le responde nada a un cliente nuevo. El orden importa, porque solo se ven las primeras tres o cuatro sin deslizar. Deben ir en el orden en que el cliente se hace las preguntas:</p>
+
+  <table>
+    <tr><th style="width:12mm">Orden</th><th style="width:30mm">Bolita</th><th>Qué va adentro</th><th style="width:28mm">Estado</th></tr>
+    <tr><td>1</td><td class="dia">Reservar</td><td>Cómo agendar por WhatsApp, en 3 historias</td><td>crear</td></tr>
+    <tr><td>2</td><td class="dia">Fade</td><td>Tus mejores fades, antes y después</td><td>ya la tienes</td></tr>
+    <tr><td>3</td><td class="dia">Precios</td><td>La tabla de precios, para que no pregunten por DM</td><td>crear</td></tr>
+    <tr><td>4</td><td class="dia">Diseños</td><td>Los diseños, que es lo que te diferencia</td><td>ya la tienes</td></tr>
+    <tr><td>5</td><td class="dia">Ubicación</td><td>Mapa, fachada, parqueo, referencia del sector</td><td>crear</td></tr>
+    <tr><td>6</td><td class="dia">Taper</td><td>El taper como servicio aparte</td><td>ya la tienes</td></tr>
+  </table>
+
+  <p><b>"Publicidad" sale de ahí.</b> Eso es material tuyo, no una respuesta a lo que el cliente se pregunta. Si tiene algo útil, repártelo entre Reservar y Precios.</p>
+  <p class="nota">Las portadas de las bolitas tienen que ser todas del mismo estilo. Hoy tienes tres fotos y una gráfica con logo, y esa mezcla es la que hace ver el perfil desordenado. Elige: todas foto en blanco y negro, o todas gráfica con el mismo fondo.</p>
+
+  <h3>Las primeras nueve fotos</h3>
+  <p>La gente no mira foto por foto, mira el cuadro completo. Hoy tienes gráficas moradas de neón, un video de un corte a medias y una foto de la ventana del local. Son tres estilos distintos peleando en la misma pantalla.</p>
+
+  <ul class="check">
+    <li>Misma pared de fondo en todas las fotos de corte, y siempre del pecho para arriba.</li>
+    <li>El antes y el después van juntos en un solo post (deslizando), nunca separados.</li>
+    <li>Las gráficas de publicidad: una de cada nueve, como máximo. El cuadro es para mostrar cortes.</li>
+    <li>Nada de fotos del local vacío ni de la ventana arriba. Eso va en la bolita de Ubicación.</li>
+  </ul>
+
+  <div class="aviso">
+    <b>La prueba de los dos segundos</b>
+    Tapa todo menos tu foto, tu nombre, tu descripción, el link y la primera fila de fotos. Si un desconocido no entiende con eso que esto es una barbería de fades en Santo Domingo y le dan ganas de reservar, el perfil todavía no está listo.
+  </div>
+
+  <footer>Guía de Instagram · Pinky Flow Barbershop</footer>
+</section>
+
+<!-- ============ 3. QUÉ PUBLICAR ============ -->
+<section class="seccion">
+  <div class="seccion-cabeza">
+    <span class="num">3</span>
+    <h2>Qué publicar cada semana</h2>
+    <span class="tiempo">5 posts</span>
+  </div>
+
+  <p>Tienes 217 publicaciones y 1.657 seguidores. Eso quiere decir que publicas bastante, pero lo que publicas no está pidiendo nada. En Instagram hoy lo que reparte tu contenido a gente nueva es que <b>lo guarden</b> o que <b>se lo manden a un amigo</b>. Los likes casi no pesan.</p>
+
+  <table>
+    <tr><th style="width:22mm">Día</th><th style="width:34mm">Qué publicas</th><th>De qué</th><th style="width:20mm">Hora</th><th style="width:32mm">Para qué</th></tr>
+    <tr><td class="dia">Lunes</td><td>Varias fotos deslizando</td><td>Un antes y después con los pasos</td><td>12:30 pm</td><td>que lo guarden</td></tr>
+    <tr><td class="dia">Martes</td><td>Solo historias</td><td>Encuesta: cuál de estos dos fades</td><td>en el día</td><td>que te escriban</td></tr>
+    <tr><td class="dia">Miércoles</td><td>Video corto</td><td>Cómo se pide un fade bien</td><td>7:30 pm</td><td>que lo guarden</td></tr>
+    <tr><td class="dia">Jueves</td><td>Varias fotos deslizando</td><td>3 cosas falsas que todos creen del fade</td><td>12:30 pm</td><td>que lo manden</td></tr>
+    <tr><td class="dia">Viernes</td><td>Video corto</td><td>Un corte de principio a fin</td><td>7:00 pm</td><td>que lo manden</td></tr>
+    <tr><td class="dia">Sábado</td><td>Una foto</td><td>Precio y tiempo real del servicio</td><td>10:00 am</td><td>que reserven</td></tr>
+    <tr><td class="dia">Domingo</td><td>Solo historias</td><td>Caja de preguntas</td><td>noche</td><td>que te escriban</td></tr>
+  </table>
+
+  <p class="nota">Jueves y viernes cargan lo fuerte porque es cuando la gente decide dónde cortarse para el fin de semana.</p>
+
+  <h3>Tres reglas que hacen que esto funcione</h3>
+  <ol class="pasos">
+    <li><b>La primera hora decide todo.</b> Contesta cada comentario rápido, en esa primera hora. Cuando tú contestas, llegan más comentarios, e Instagram lo lee como que el post está bueno y se lo enseña a más gente.</li>
+    <li><b>Sube cada post a tus historias el mismo día.</b> Es gratis y rescata a los que no lo vieron.</li>
+    <li><b>Si te sobra material, haz otro video corto, no otro post de fotos.</b> Los videos llegan a gente nueva; los posts de fotos los ven sobre todo los que ya te siguen.</li>
+  </ol>
+
+  <div class="aviso">
+    <b>La pregunta antes de publicar cualquier cosa</b>
+    ¿Un cliente se lo mandaría a un pana, o lo guardaría para usarlo después? Si la respuesta a las dos es no, ese post no va a llegar a nadie nuevo. Mejor no lo subas y haz otro.
+  </div>
+
+  <footer>Guía de Instagram · Pinky Flow Barbershop</footer>
+</section>
+
+<!-- ============ 4. TEXTOS LISTOS ============ -->
+<section class="seccion">
+  <div class="seccion-cabeza">
+    <span class="num">4</span>
+    <h2>Textos listos para copiar</h2>
+    <span class="tiempo">copia y pega</span>
+  </div>
+
+  <p>Estos son los textos que acompañan los posts de la semana. Cópialos tal cual. <b>Cambia los números por los tuyos de verdad</b>: si pones un número inventado y alguien te lo discute en comentarios, pierdes más de lo que ganaste.</p>
+
+  <div class="copiar-tit">Miércoles · video de cómo pedir un fade</div>
+  <div class="copiar">Así se pide un fade sin que te lo hagan mal.
+
+No digas "bajito". Bajito para ti y para mí no es
+lo mismo, y ahí empiezan los problemas.
+
+Di tres cosas:
+1. El número de la máquina abajo
+2. Dónde quieres que empiece el degradado
+3. Si la línea va recta o sigue tu frente
+
+Con eso cualquier barbero te entiende.
+
+Guárdalo y léelo antes de tu próxima cita.
+
+#barberiasantodomingo #comopedirunfade #barberord #fade #barberia</div>
+
+  <div class="copiar-tit">Jueves · post de fotos, lo que todos creen mal</div>
+  <div class="copiar">3 mitos del fade que te están costando dinero cada mes.
+
+El primero es el que más duele: cortarte cada 15 días
+no mantiene el fade, lo desgasta. El degradado necesita
+largo para existir.
+
+Los otros dos están en las fotos.
+
+Mándaselo al pana que todavía cree el número 1.
+
+#mitosdelfade #barberiasantodomingo #barberord #cortesmodernos</div>
+
+  <div class="copiar-tit">Sábado · foto de precio y tiempo</div>
+  <div class="copiar">45 minutos. Ese es el tiempo real de un fade con barba
+aquí, de que te sientas a que te paras.
+
+Sin esperar turno, porque trabajamos con cita.
+
+Sábado es el día que más se llena. Si lo quieres hoy,
+escribe ahora.
+
+Reserva por WhatsApp, link en la bio.
+
+#barberiasantodomingo #fadedominicana #barberord #barberia</div>
+
+  <h3>Sobre los hashtags</h3>
+  <p>Poner 30 hashtags ya no sirve, y de hecho hace daño. Con <b>4 o 5 bien escogidos</b> rinde más. La razón es simple: en un hashtag de millones de publicaciones tu post dura segundos y desaparece. En uno pequeño y específico dura horas, y además te trae gente que de verdad vive cerca.</p>
+
+  <p><b>Ve cambiando entre estos tres grupos</b>, no repitas siempre el mismo. Instagram detecta cuando se repite igual y lo trata como spam.</p>
+
+  <div class="copiar">Para cortes y fades:
+#barberiasantodomingo #fadedominicana #barberord #cortesmodernos #barberia
+
+Para diseños:
+#disenosencabello #barberiasantodomingo #freestylebarber #barberord #taper
+
+Para los educativos:
+#comopedirunfade #barberiasantodomingo #tipsdebarberia #barberord</div>
+
+  <p class="nota">Si puedes, cambia <b>#barberiasantodomingo</b> por el de tu sector exacto, tipo #barberianaco o #barberiapiantini. Mientras más específico, mejor te va, porque ahí sí compites y ganas.</p>
+
+  <footer>Guía de Instagram · Pinky Flow Barbershop</footer>
+</section>
+
+<!-- ============ 5. CARRUSEL + MEDIR ============ -->
+<section class="seccion">
+  <div class="seccion-cabeza">
+    <span class="num">5</span>
+    <h2>El post del lunes, foto por foto</h2>
+    <span class="tiempo">8 fotos</span>
+  </div>
+
+  <p>Este es el post que mejor funciona para una barbería, porque el antes y después es la prueba más creíble que tienes. Son 8 fotos, todas verticales, con la misma letra y el mismo color en todas.</p>
+
+  <table>
+    <tr><th style="width:12mm">Foto</th><th style="width:72mm">Texto encima de la imagen</th><th>Qué se ve</th></tr>
+    <tr><td><span class="slide-num">1</span></td><td><b>Este fade duró 3 semanas iguales</b></td><td>El resultado final, del pecho para arriba</td></tr>
+    <tr><td><span class="slide-num">2</span></td><td><b>Así llegó</b></td><td>La foto de cómo llegó, mismo ángulo que la 1</td></tr>
+    <tr><td><span class="slide-num">3</span></td><td>Primero medimos la línea, no la máquina</td><td>Detalle de la medida</td></tr>
+    <tr><td><span class="slide-num">4</span></td><td>El degradado sube en 3 tiempos, no en uno</td><td>El degradado a medias</td></tr>
+    <tr><td><span class="slide-num">5</span></td><td>La barba se alinea con la mandíbula, no con el cuello</td><td>Detalle de la barba</td></tr>
+    <tr><td><span class="slide-num">6</span></td><td>El diseño se marca al final, nunca al principio</td><td>El diseño marcándose</td></tr>
+    <tr><td><span class="slide-num">7</span></td><td>Pedir bajo cuando quieres medio es el error número 1</td><td>Comparación de dos alturas</td></tr>
+    <tr><td><span class="slide-num">8</span></td><td><b>Los 4 pasos, en una sola imagen. Guárdalo para tu próxima cita</b></td><td>Resumen de los 4 pasos</td></tr>
+  </table>
+
+  <p class="nota">Por qué en ese orden: la foto 1 enseña el resultado y la 2 enseña cómo llegó. Ese salto es lo que hace que la gente deslice. Lo bueno va en las fotos 3 y 4, no al final, porque poca gente llega hasta la 8. Y la 8 es la que se guarda, porque resume todo en una sola imagen.</p>
+
+  <h3>Antes de darle a publicar</h3>
+  <ul class="check">
+    <li>Las primeras dos líneas del texto se entienden solas (es lo único que se ve antes del "más").</li>
+    <li>Hay un número de verdad, no un "rápido" ni un "económico".</li>
+    <li>De 4 a 5 hashtags, al final del texto o en el primer comentario.</li>
+    <li>Máximo 3 emojis, y puestos a propósito.</li>
+    <li>Nada de "comenta SÍ", "etiqueta a 3 panas" ni "dale doble tap". Instagram castiga eso.</li>
+    <li>Si grabaste en TikTok, exporta el video <b>sin la marca de agua</b>. Con el logo de TikTok, Instagram lo entierra.</li>
+  </ul>
+
+  <h3>Qué mirar cada lunes</h3>
+  <p>Entra a tu perfil, toca Estadísticas, y anota estos cuatro números en una libreta para poder compararlos semana con semana.</p>
+  <table>
+    <tr><th style="width:52mm">Número</th><th>Qué te está diciendo</th></tr>
+    <tr><td class="dia">Veces que lo mandaron</td><td>El más importante de todos. Si sube, estás creciendo.</td></tr>
+    <tr><td class="dia">Veces que lo guardaron</td><td>Mira cuáles se guardan más y repite ese tipo de post.</td></tr>
+    <tr><td class="dia">Visitas a tu perfil</td><td>Si suben y no suben los seguidores, el problema está arriba en tu perfil, no en lo que publicas.</td></tr>
+    <tr><td class="dia">Toques al link</td><td>Este es tu número de reservas. Es el que paga la luz.</td></tr>
+  </table>
+
+  <div class="aviso">
+    <b>Para terminar la guía me faltan tres datos tuyos</b>
+    1. Tus precios reales, para la bolita de Precios y el post del sábado.<br>
+    2. Tu sector exacto (Naco, Piantini, Los Prados), para afinar los hashtags.<br>
+    3. Tu horario, y si trabajas solo o con más barberos.
+  </div>
+
+  <footer>Guía de Instagram · Pinky Flow Barbershop</footer>
+</section>
+
+</body>
+</html>
